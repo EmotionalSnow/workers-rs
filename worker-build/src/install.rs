@@ -35,7 +35,7 @@ pub fn ensure_wasm_pack() -> Result<()> {
     if is_installed("wasm-pack")?.is_none() {
         println!("Installing wasm-pack...");
         let exit_status = Command::new("cargo")
-            .args(["install", "wasm-pack"])
+            .args(["install", "wasm-pack", "--git", "https://github.com/d3lm/wasm-pack", "--rev", "713868b204f151acd1989c3f29ff9d3bc944c306"])
             .spawn()?
             .wait()?;
 
